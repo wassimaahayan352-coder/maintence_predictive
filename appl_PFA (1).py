@@ -13,7 +13,7 @@ import os
 import numpy as np
 import pytz
 import matplotlib
-matplotlib.use('Agg')  # KHASSA T-KON QBEL "import matplotlib.pyplot as plt"
+matplotlib.use('Agg')  
 
 # ============================================================
 # 🟢 CONFIGURATION FLASK
@@ -356,11 +356,10 @@ def history():
 # 🚀 LANCEMENT
 # ============================================================
 
-# 1. Had l-function khassha t-kon l-foq (Qbel l-run)
+
 @app.teardown_appcontext
 def shutdown_session(exception=None):
     db.session.remove()
 
-# 2. L-run khasso y-kon houwa l-akhir f l-file
 if __name__ == '__main__':
     app.run(debug=True, threaded=True)
